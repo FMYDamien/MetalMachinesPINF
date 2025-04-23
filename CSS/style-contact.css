@@ -1,0 +1,335 @@
+/* Style général */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: black;
+}
+
+header, footer {
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: 500;
+    font-size: 20px;
+}
+
+header {
+    background-color: #fff;
+    position: relative;
+}
+
+.logo img {
+    height: 65px;
+    margin-right: 50px;
+}
+
+.language-switch {
+    margin-left: 10px;
+    font-size: 20px;
+    font-family: 'DM Sans', sans-serif; /* Ajout de la police d'écriture */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.language-switch select {
+    border: none;
+    background: transparent;
+    outline: none;
+    cursor: pointer;
+    font-family: 'DM Sans', sans-serif; /* Ajout de la police d'écriture */
+    font-size: 1em; /* Utilisation d'unités relatives pour un rétrécissement fluide */
+}
+
+nav {
+    flex-grow: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 3vw; /* Utilisation d'unités relatives pour un rétrécissement fluide */
+}
+
+nav ul li {
+    position: relative;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #000;
+    padding: 0.5em; /* Utilisation d'unités relatives pour un rétrécissement fluide */
+    transition: color 0.3s, font-size 0.3s; /* Transition fluide pour la taille du texte */
+}
+
+nav ul li a:hover {
+    color: #e74c3c;
+}
+
+nav ul li.dropdown::after {
+    content: '\25BC';
+    font-size: 12px;
+    color: black;
+    margin-left: 5px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+nav ul li ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 10px 0;
+    z-index: 1000;
+}
+
+nav ul li ul li {
+    display: block;
+}
+
+nav ul li ul li a {
+    padding: 10px 20px;
+    white-space: nowrap;
+}
+
+nav ul li:hover ul {
+    display: block;
+}
+
+#contact-button a {
+    border: 2px solid #000;
+    border-radius: 100px;
+    padding: 10px 20px;
+    color: #333;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+#contact-button a:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+@media (max-width: 1080px) {
+    #contact-button a {
+        border: none; /* Enlève le contour autour de "Nous contacter" */
+        color: #000; /* Applique le même style que les autres textes du header */
+        padding: 5px; /* Ajuste le padding pour correspondre aux autres textes */
+    }
+}
+
+@media (max-width: 768px) {
+    header, footer {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .logo {
+        display: none; /* Cache le logo en mode téléphone */
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 20px;
+        align-items: center; /* Centre les éléments du menu */
+    }
+
+    .language-switch {
+        order: 2; /* Place le language-selector en dessous de "Nous contacter" */
+        width: 100%;
+        text-align: center; /* Centre le language-selector */
+        margin-top: 10px;
+    }
+
+    #contact-button {
+        margin-top: 10px;
+    }
+
+    #contact-button a {
+        border: none; /* Enlève le contour autour de "Nous contacter" en mode téléphone */
+    }
+}
+
+footer {
+    background-color: #262626;
+    align-items: flex-start;
+    flex-direction: column;
+    color: white;
+}
+
+footer p {
+    margin: 0;
+    font-size: 24px;
+}
+
+footer hr {
+    width: 100%;
+    border: 1px solid #fff;
+    margin: 10px 0;
+    opacity: 30%;
+}
+
+.menu-foot {
+    list-style-type: none;
+    padding: 0;
+}
+
+.menu-foot li {
+    display: inline;
+    margin-right: 10px;
+}
+
+.menu-foot a {
+    color: white;
+    text-decoration: none;
+    font-size: 10px;
+}
+
+.contact-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+    gap: 20px;
+}
+
+.contact-form, .contact-info {
+    flex: 1;
+    min-width: 300px;
+    padding: 20px;
+    border-radius: 8px;
+    background: none;
+    max-width: 600px;
+}
+
+.contact-form h2, .contact-info h2 {
+    margin-top: 0;
+    font-size: 42px;
+}
+
+.contact-form .contact-subtitle, .contact-info .contact-subtitle {
+    font-size: 20px;
+    color: #666;
+}
+
+.contact-form form div {
+    margin-bottom: 15px;
+}
+
+.contact-form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-size: 20px;
+}
+
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    margin-bottom: 10px;
+}
+
+.contact-form .btn-submit {
+    background: #B91C1C;
+    color: white;
+    border: none;
+    max-width: 190px;
+    max-height: 70px;
+    padding: 20px 40px;
+    border-radius: 40px;
+    cursor: pointer;
+    margin-top: 3%;
+    font-size: 16px;
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease;
+}
+
+.contact-form .btn-submit:hover {
+    background: red;
+}
+
+.contact-form .btn-submit:active {
+    background-color: #000;
+    color: white;
+    transform: scale(1.1);
+}
+
+.contact-info ul {
+    list-style: none;
+    padding: 0;
+}
+
+.contact-info ul li {
+    margin-bottom: 10px;
+}
+
+.contact-info ul li a {
+    text-decoration: none;
+    color: #262626;
+    font-size: 18px;
+}
+
+.contact-info ul li #linkedin {
+    display: inline-block;
+    margin-right: 10px;
+    width: 20px;
+    height: 20px;
+}
+
+.contact-info ul li #linkedin:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.contact-info ul li a:hover {
+    text-decoration: underline;
+}
+
+#map {
+    margin-top: 15px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    width: 100%;
+    height: 300px;
+}
+
+.actu1, .actu2, .actu3 {
+    padding: 100px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.actu1 p {
+    color: #666;
+}
+
+.actu2 {
+    background-color: #262626;
+    color: #ccc;
+}
+
+.actu2 div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.actu2 div div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}

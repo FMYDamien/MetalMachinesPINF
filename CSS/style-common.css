@@ -1,0 +1,347 @@
+/* Style général */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
+
+body {
+    font-family: 'DM Sans', sans-serif; /* Police générale du site */
+    margin: 0; /* Supprime les marges par défaut */
+    padding: 0; /* Supprime les espaces internes par défaut */
+    /* line-height: 1.6; /* Définit l'espacement entre les lignes */
+    color: black; /* Couleur de texte par défaut */
+}
+
+/* En-tête */
+header {
+    background-color: #fff; /* Fond blanc pour l'en-tête */
+    padding: 10px 20px 10px 20px; /* Espacement interne de l'en-tête */
+    display: flex; /* Active la disposition en flexbox */
+    align-items: center; /* Aligne les éléments verticalement au centre */
+    justify-content: space-between; /* Espace entre les éléments */
+    position: relative; /* Nécessaire pour certaines positions relatives des enfants */
+    font-weight: 500; /* Épaisseur moyenne de la police */
+    font-size: 20px; /* Taille de texte pour l'en-tête */
+}
+
+/* Logo */
+.logo img {
+    height: 65px; /* Taille fixe du logo */
+    margin-right: 50px; /* Espacement entre le logo et les autres éléments */
+}
+
+/* Sélecteur de langue */
+.language-switch {
+    margin-left: 10px; /* Espacement à gauche du sélecteur */
+    font-size: 20px;
+}
+
+.language-switch select {
+    border: none; /* Supprime la bordure par défaut */
+    background: transparent; /* Fond transparent */
+    outline: none; /* Supprime la mise en surbrillance au focus */
+    cursor: pointer; /* Change le curseur au survol */
+}
+
+/* Menu de navigation */
+nav {
+    flex-grow: 1; /* Prend tout l'espace disponible */
+    display: flex; /* Flexbox pour la navigation */
+    justify-content: right; /* Aligne les éléments à droite */
+}
+
+nav ul {
+    list-style: none; /* Supprime les puces des listes */
+    margin: 0; /* Supprime les marges de la liste */
+    padding: 0; /* Supprime les espacements internes */
+    display: flex; /* Disposition horizontale des liens */
+    gap: 60px; /* Espacement entre chaque élément */
+}
+
+nav ul li {
+    position: relative; /* Nécessaire pour positionner les sous-menus */
+}
+
+nav ul li a {
+    text-decoration: none; /* Supprime le soulignement des liens */
+    color: #000; /* Couleur noire des liens */
+    padding: 5px; /* Espacement interne des liens */
+    transition: color 0.3s; /* Animation douce pour le changement de couleur */
+}
+
+nav ul li a:hover {
+    color: #e74c3c; /* Couleur rouge au survol */
+}
+
+/* Ajout d'un chevron pour les dropdowns */
+nav ul li.dropdown::after {
+    content: '\25BC'; /* Flèche vers le bas */
+    font-size: 12px;
+    color: black;
+    margin-left: 5px; /* Espacement entre le texte et la flèche */
+    display: inline-block;
+    vertical-align: middle;
+}
+
+
+/* Sous-menu */
+nav ul li ul {
+    display: none; /* Cache le sous-menu par défaut */
+    position: absolute; /* Positionne le sous-menu par rapport à son parent */
+    top: 100%; /* Place le sous-menu en dessous de l'élément parent */
+    left: 0; /* Aligne le sous-menu à gauche */
+    background-color: #fff; /* Fond blanc pour le sous-menu */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Ajoute une ombre légère */
+    padding: 10px 0; /* Espacement interne du sous-menu */
+    z-index: 1000; /* Assure que le sous-menu soit au-dessus des autres éléments */
+}
+
+nav ul li ul li {
+    display: block; /* Affiche chaque élément de sous-menu en bloc */
+}
+
+nav ul li ul li a {
+    padding: 10px 20px; /* Espacement interne des liens du sous-menu */
+    white-space: nowrap; /* Empêche le texte de se couper sur plusieurs lignes */
+}
+
+nav ul li:hover ul {
+    display: block; /* Affiche le sous-menu au survol */
+}
+
+/* Bouton "Nous contacter" */
+#contact-button a {
+    border: 2px solid #000; /* Bordure noire de 2px */
+    border-radius: 100px; /* Forme arrondie du bouton */
+    padding: 10px 20px; /* Espacement interne du bouton */
+    color: #333; /* Couleur de texte */
+    text-decoration: none; /* Supprime le soulignement du lien */
+    transition: all 0.3s; /* Transition douce pour toutes les propriétés */
+}
+
+#contact-button a:hover {
+    background-color: #000; /* Fond noir au survol */
+    color: #fff; /* Texte blanc au survol */
+}
+
+/* Responsivité */
+@media (max-width: 768px) {
+    header {
+        flex-wrap: wrap; /* Permet à l'en-tête de s'adapter sur plusieurs lignes */
+        justify-content: center; /* Centre les éléments pour les petits écrans */
+    }
+
+    nav ul {
+        flex-direction: column; /* Dispose les éléments en colonne */
+        gap: 20px; /* Réduit l'espacement entre les éléments */
+    }
+
+    #contact-button {
+        margin-top: 10px; /* Ajoute un espacement au-dessus du bouton */
+    }
+}
+
+#intro {
+    display: flex;
+    align-items: center;
+    padding: 50px;
+    height: 500px;
+    flex-direction: column;
+    padding-bottom: 150px;
+}
+
+#intro h1 {
+    margin-top: 130px;
+    font-size : 80px;
+    margin-bottom: 30px;
+}
+
+#intro p {
+    color: #404040;
+    font-size : 30px;
+}
+
+.column1, .column2 {
+    width: 45%;
+}
+
+#about1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px;
+    height: 500px;
+    padding-bottom: 150px;
+}
+
+#about1 .upload-box {
+    width: 456px;
+    height: 456px;
+    border: 2px dashed #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+    border-radius: 50px;
+    top: 50px;
+    margin-left: 20%;
+}
+
+#about1 .upload-box span {
+    font-size: 150px;
+    color: #ccc;
+}
+
+#about1 .upload-box input {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+#about1 h2 {
+    font-size: 35px;
+}
+
+#about1 p {
+    color: #404040;
+    font-size : 25px;
+    text-align: justify;
+    width: 80%;
+}
+
+#about2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px;
+    height: 500px;
+    background-color: #262626;
+    padding-bottom: 100px;
+}
+
+#about2 .upload-box {
+    width: 456px;
+    height: 456px;
+    border: 2px dashed white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+    border-radius: 50px;
+    top: 50px;
+    background-color: lightgrey;
+}
+
+#about2 .upload-box span {
+    font-size: 150px;
+    color: white;
+}
+
+#about2 .upload-box input {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+#about2 h2 {
+    font-size: 35px;
+    margin-left: 134px;
+    color: white;
+}
+
+#about2 p {
+    color: lightgrey;
+    font-size : 25px;
+    text-align: justify;
+    width: 80%;
+    margin-left: 134px;
+}
+
+#about3 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px;
+    height: 500px;
+    padding-bottom: 150px;
+}
+
+#about3 .upload-box {
+    width: 456px;
+    height: 456px;
+    border: 2px dashed #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+    border-radius: 50px;
+    top: 50px;
+}
+
+#about3 .upload-box span {
+    font-size: 150px;
+    color: #ccc;
+}
+
+#about3 .upload-box input {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+
+/* Style du footer */
+footer {
+    background-color: #262626; /* Fond sombre pour le footer */
+    padding: 10px 20px; /* Espacement interne du footer (haut, droite, bas, gauche) */
+    display: flex; /* Utilise flexbox dans le footer */
+    align-items: flex-start; /* Aligne les éléments verticalement en haut */
+    justify-content: space-between; /* Espacement égal entre les éléments du footer */
+    font-weight: 100; /* Applique une épaisseur légère à la police */
+    font-size: 20px; /* Définit la taille du texte pour le footer */
+    flex-direction: column; /* Aligne les éléments du footer en colonne (pour un alignement vertical) */
+    color: white; /* Définit la couleur du texte en blanc */
+}
+
+
+
+/* Style du paragraphe dans le footer */
+footer p {
+    margin: 0; /* Supprime la marge par défaut autour du paragraphe */
+    font-size: 24px; 
+}
+
+/* Style de la ligne horizontale (hr) dans le footer */
+footer hr {
+    width: 100%; /* La ligne occupe toute la largeur disponible */
+    border: 1px solid #fff; /* Définit une bordure fine et blanche pour la ligne */
+    margin: 10px 0; /* Ajoute un espace de 10px en haut et en bas de la ligne */
+    left: 70px;
+    opacity: 30%;
+    
+}
+
+/* Style du menu dans le footer (liste non ordonnée) */
+.menu-foot {
+    list-style-type: none; /* Supprime les puces (points) devant les éléments de la liste */
+    padding: 0; /* Supprime le padding par défaut autour de la liste */
+}
+
+/* Style des éléments de la liste */
+.menu-foot li {
+    display: inline; /* Affiche les éléments de la liste en ligne (pas de saut de ligne) */
+    margin-right: 10px; /* Ajoute un espace de 15px à droite de chaque élément */
+}
+
+/* Style des liens dans le menu */
+.menu-foot a {
+    color: white; /* Définit la couleur des liens en blanc */
+    text-decoration: none; /* Supprime le soulignement par défaut des liens */
+    font-size : 10px;
+}

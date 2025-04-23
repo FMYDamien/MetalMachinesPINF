@@ -1,0 +1,757 @@
+/* Style général */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: black;
+}
+
+/* En-tête */
+header {
+    background-color: #fff;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: 500;
+    font-size: 20px;
+}
+
+.logo img {
+    height: 65px;
+    margin-right: 50px;
+}
+
+.language-switch {
+    margin-left: 10px;
+    font-size: 20px;
+}
+
+.language-switch select {
+    border: none;
+    background: transparent;
+    outline: none;
+    cursor: pointer;
+}
+
+nav {
+    flex-grow: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 3vw;
+}
+
+nav ul li {
+    position: relative;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #000;
+    padding: 0.5em;
+    transition: color 0.3s, font-size 0.3s;
+}
+
+nav ul li a:hover {
+    color: #e74c3c;
+}
+
+nav ul li.dropdown::after {
+    content: '\25BC';
+    font-size: 12px;
+    color: black;
+    margin-left: 5px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+nav ul li ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 10px 0;
+    z-index: 1000;
+}
+
+nav ul li ul li {
+    display: block;
+}
+
+nav ul li ul li a {
+    padding: 10px 20px;
+    white-space: nowrap;
+}
+
+nav ul li:hover ul {
+    display: block;
+}
+
+/* Bouton "Nous contacter" */
+#contact-button a {
+    border: 2px solid #000;
+    border-radius: 100px;
+    padding: 10px 20px;
+    color: #333;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+#contact-button a:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+/* Responsivité */
+@media (max-width: 768px) {
+    header {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .logo {
+        display: none;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+    }
+
+    .language-switch {
+        order: 2;
+        width: 100%;
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    #contact-button {
+        margin-top: 10px;
+    }
+
+    #contact-button a {
+        border: none;
+    }
+}
+
+/* Responsivité */
+@media (max-width: 1024px) {
+    .box {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .column1, .column2 {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    #intro h1 {
+        font-size: 50px;
+        margin-left: 0;
+    }
+
+    #intro p {
+        font-size: 20px;
+        margin-left: 0;
+    }
+
+    .box .btn, .box .btn1 {
+        margin-left: 0;
+        max-width: 100%;
+        padding: 15px 30px;
+    }
+
+    .upload-box, .upload-box-1 {
+        width: 100%;
+        height: auto;
+        border-radius: 20px;
+    }
+
+    .upload-box span, .upload-box-1 span {
+        font-size: 100px;
+    }
+
+    .contact-container {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+    }
+
+    .contact-form, .contact-info {
+        width: 100%;
+        max-width: 100%;
+        padding: 10px;
+    }
+
+    .contact-form h2, .contact-info h2 {
+        font-size: 32px;
+    }
+
+    .contact-form .contact-subtitle, .contact-info .contact-subtitle {
+        font-size: 18px;
+    }
+
+    footer {
+        align-items: center;
+        text-align: center;
+    }
+
+    .menu-foot li {
+        display: block;
+        margin-bottom: 10px;
+    }
+}
+
+.box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px;
+    height: 500px;
+}
+
+.column1, .column2 {
+    width: 45%;
+}
+
+#intro h1 {
+    font-size : 80px;
+    margin-left: 134px;
+    margin-bottom: 10px;
+}
+
+#intro p {
+    color: #404040;
+    margin-left: 134px;
+    font-size : 30px;
+    margin-bottom: 50px;
+
+}
+
+.box .btn {
+    margin-top: 30px;
+    margin-left: 134px;
+    background: #B91C1C; /* Couleur de fond du bouton */
+    color: white; /* Couleur du texte du bouton */
+    border: none; /* Supprime la bordure du bouton */
+    max-width: 190px; /* Largeur maximale */
+    max-height: 70px; /* Hauteur maximale */
+    padding: 20px 40px; /* Espacement interne */
+    border-radius: 40px; /* Coins arrondis du bouton */
+    cursor: pointer; /* Changement du curseur au survol */
+    font-size: 16px; /* Taille du texte */
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease; /* Transition douce pour l'agrandissement et la couleur de fond */
+    position: relative;
+}
+
+.box .btn:hover {
+    background: red; /* Changement de la couleur de fond au survol */
+}
+
+.box .btn:active {
+    background-color: #000; /* Changement de la couleur de fond au clic */
+    color:white; /* Couleur du texte au clic */
+    transform: scale(1.1); /* Agrandissement de 10% au clic */
+}
+
+.box .btn1 {
+    margin-left: 134px;
+    top: 50px;
+    background: white; /* Couleur de fond du bouton */
+    color: black; /* Couleur du texte du bouton */
+    border: 2px solid black; /* Supprime la bordure du bouton */
+    max-width: 190px; /* Largeur maximale */
+    max-height: 70px; /* Hauteur maximale */
+    padding: 20px 40px; /* Espacement interne */
+    border-radius: 40px; /* Coins arrondis du bouton */
+    cursor: pointer; /* Changement du curseur au survol */
+    font-size: 16px; /* Taille du texte */
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease; /* Transition douce pour l'agrandissement et la couleur de fond */
+    position: relative;
+}
+
+.box .btn1:hover {
+    background: lightgrey; /* Changement de la couleur de fond au survol */
+}
+
+.box .btn1:active {
+    background-color: #000; /* Changement de la couleur de fond au clic */
+    color:white; /* Couleur du texte au clic */
+    transform: scale(1.1); /* Agrandissement de 10% au clic */
+}
+
+.upload-box {
+    width: 456px;
+    height: 456px;
+    border: 2px dashed #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+    border-radius: 50px;
+    top: 50px;
+    margin-left: 10%;
+}
+
+.upload-box span {
+    font-size: 150px;
+    color: #ccc;
+}
+
+.upload-box input {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.upload-box-1 {
+    width: 656px;
+    height: 456px;
+    border: 2px dashed #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+    border-radius: 50px;
+    top: 50px;
+}
+
+.upload-box-1 span {
+    font-size: 150px;
+    color: #ccc;
+}
+
+.upload-box-1 input {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.box h2 {
+    font-size: 35px;
+    margin-left: 134px;
+}
+
+.box p {
+    color: #404040;
+    font-size : 25px;
+    margin-left: 134px;
+    text-align: justify;
+    width: 80%;
+}
+
+.edit-btn {
+    position: fixed;
+    top: 100px;
+    right: 30px;
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 20px 30px;
+    font-size: 40px;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 1000;
+    transition: background-color 0.3s;
+}
+
+.edit-btn:hover {
+    background-color: #c0392b;
+}
+
+.edit-btn:active {
+    background-color: black;
+}
+
+#map {
+    width: 100%;
+    height: 500px; /* Hauteur fixe */
+    min-height: 500px;
+    margin-top: 50px;
+    position: relative;
+    overflow: hidden; /* Empêche le débordement */
+    display: block; /* Corrige un éventuel problème de flexbox */
+}
+
+.contact-container {
+    margin-top: 50px;
+    display: flex; /* Utilise Flexbox pour la disposition des éléments */
+    flex-wrap: wrap; /* Permet aux éléments de se répartir sur plusieurs lignes si nécessaire */
+    justify-content: space-between; /* Espace les éléments de manière égale */
+    padding: 20px; /* Espacement interne autour des éléments */
+    gap: 20px; /* Espacement entre les éléments */
+    left: 203px; /* Décalage à gauche (probablement à ajuster) */
+    justify-content: space-around; /* Espace les éléments de manière plus uniforme */
+}
+
+/* Section Formulaire */
+.contact-form {
+    flex: 1; /* L'élément prend une part égale de l'espace disponible */
+    min-width: 300px; /* Largeur minimale pour les petits écrans */
+    padding: 20px; /* Espacement interne */
+    border-radius: 8px; /* Coins arrondis */
+    background: none; /* Pas de fond */
+    max-width: 600px; /* Largeur maximale */
+}
+
+.contact-form h2 {
+    margin-top: 0; /* Supprime la marge supérieure */
+    font-size: 42px; /* Taille du titre */
+}
+
+.contact-form .contact-subtitle {
+    font-size: 20px; /* Taille de sous-titre */
+    color: #666; /* Couleur gris clair */
+    margin-bottom: 50px; /* Espacement sous le sous-titre */
+}
+
+.contact-form form div {
+    margin-bottom: 15px; /* Espacement entre les champs du formulaire */
+}
+
+.contact-form label {
+    display: block; /* Affiche le label en bloc */
+    font-weight: bold; /* Met le label en gras */
+    margin-bottom: 5px; /* Espacement sous le label */
+    font-size: 20px; /* Taille du texte des labels */
+}
+
+.contact-form input, 
+.contact-form textarea {
+    width: 100%; /* Prend toute la largeur disponible */
+    padding: 15px; /* Espacement interne des champs */
+    border: 1px solid #ccc; /* Bordure gris clair */
+    border-radius: 20px; /* Coins arrondis */
+    margin-left: 5px; /* Décalage à gauche */
+    margin-bottom: 10px; /* Espacement sous chaque champ */
+}
+
+.contact-form .btn-submit {
+    background: #B91C1C; /* Couleur de fond du bouton */
+    color: white; /* Couleur du texte du bouton */
+    border: none; /* Supprime la bordure du bouton */
+    max-width: 190px; /* Largeur maximale */
+    max-height: 70px; /* Hauteur maximale */
+    padding: 20px 40px; /* Espacement interne */
+    border-radius: 40px; /* Coins arrondis du bouton */
+    cursor: pointer; /* Changement du curseur au survol */
+    margin-top: 3%; /* Espacement au-dessus du bouton */
+    font-size: 16px; /* Taille du texte */
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease; /* Transition douce pour l'agrandissement et la couleur de fond */
+}
+
+.contact-form .btn-submit:hover {
+    background: red; /* Changement de la couleur de fond au survol */
+}
+
+.contact-form .btn-submit:active {
+    background-color: #000; /* Changement de la couleur de fond au clic */
+    color:white; /* Couleur du texte au clic */
+    transform: scale(1.1); /* Agrandissement de 10% au clic */
+}
+
+/* Section Informations de contact */
+.contact-info {
+    flex: 1; /* L'élément prend une part égale de l'espace disponible */
+    min-width: 300px; /* Largeur minimale */
+    padding: 20px; /* Espacement interne */
+    border-radius: 8px; /* Coins arrondis */
+    background: none; /* Pas de fond */
+    max-width: 600px; /* Largeur maximale */
+}
+
+.contact-info h2 {
+    margin-top: 0; /* Supprime la marge supérieure */
+    font-size: 42px; /* Taille du titre */
+}
+
+.contact-info .contact-subtitle {
+    font-size: 20px; /* Taille de sous-titre */
+    color: #666; /* Couleur gris clair */
+    margin-bottom: 20px; /* Espacement sous le sous-titre */
+}
+
+.contact-info ul {
+    list-style: none; /* Supprime les puces des listes */
+    padding: 0; /* Supprime les espacements internes de la liste */
+}
+
+.contact-info ul li {
+    margin-bottom: 10px; /* Espacement sous chaque élément de la liste */
+}
+
+.contact-info ul li a {
+    text-decoration: none; /* Supprime le soulignement des liens */
+    color: #262626; /* Couleur des liens */
+    font-size: 18px; /* Taille du texte des liens */
+}
+
+#hr {
+    margin-top: 30px;
+}
+
+/* Image LinkedIn */
+.contact-info ul li #linkedin {
+    display: inline-block; /* Affiche l'image à côté du texte */
+    margin-right: 10px; /* Espacement à droite de l'image */
+    width: 20px; /* Taille de l'image */
+    height: 20px; /* Taille de l'image */
+}
+
+/* Effet de survol sur l'image LinkedIn */
+.contact-info ul li #linkedin:hover {
+    transform: scale(1.1); /* Agrandissement de l'image au survol */
+    cursor: pointer; /* Change le curseur pour indiquer que l'image est cliquable */
+}
+
+/* Effet de survol sur les liens */
+.contact-info ul li a:hover {
+    text-decoration: underline; /* Souligne le lien au survol */
+}
+
+/* Style du footer */
+footer {
+    background-color: #262626; /* Fond sombre pour le footer */
+    padding: 10px 20px; /* Espacement interne du footer (haut, droite, bas, gauche) */
+    display: flex; /* Utilise flexbox dans le footer */
+    align-items: flex-start; /* Aligne les éléments verticalement en haut */
+    justify-content: space-between; /* Espacement égal entre les éléments du footer */
+    font-weight: 100; /* Applique une épaisseur légère à la police */
+    font-size: 20px; /* Définit la taille du texte pour le footer */
+    flex-direction: column; /* Aligne les éléments du footer en colonne (pour un alignement vertical) */
+    color: white; /* Définit la couleur du texte en blanc */
+}
+
+/* Style du paragraphe dans le footer */
+footer p {
+    margin: 0; /* Supprime la marge par défaut autour du paragraphe */
+    font-size: 24px; 
+}
+
+/* Style de la ligne horizontale (hr) dans le footer */
+footer hr {
+    width: 100%; /* La ligne occupe toute la largeur disponible */
+    border: 1px solid #fff; /* Définit une bordure fine et blanche pour la ligne */
+    margin: 10px 0; /* Ajoute un espace de 10px en haut et en bas de la ligne */
+    left: 70px;
+    opacity: 30%;
+    
+}
+
+/* Style du menu dans le footer (liste non ordonnée) */
+.menu-foot {
+    list-style-type: none; /* Supprime les puces (points) devant les éléments de la liste */
+    padding: 0; /* Supprime le padding par défaut autour de la liste */
+}
+
+/* Style des éléments de la liste */
+.menu-foot li {
+    display: inline; /* Affiche les éléments de la liste en ligne (pas de saut de ligne) */
+    margin-right: 10px; /* Ajoute un espace de 15px à droite de chaque élément */
+}
+
+/* Style des liens dans le menu */
+.menu-foot a {
+    color: white; /* Définit la couleur des liens en blanc */
+    text-decoration: none; /* Supprime le soulignement par défaut des liens */
+    font-size : 10px;
+}
+
+
+
+
+
+
+/* Partie style responsive */
+@media (max-width: 768px) {
+    header {
+        margin-top: 80px; /* décale le menu pour laisser place au titre fixé */
+    }
+
+    #intro h1 {
+        font-size: 36px;
+        margin: 0;
+        text-align: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: white;
+        z-index: 1000;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        white-space: normal;
+        word-break: break-word;
+        line-height: 1.2;
+        padding: 0px 10px;
+    }
+    
+
+    #intro {
+        padding-top: 0;
+    }
+
+    #intro p {
+        font-size: 18px;
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .box {
+        flex-direction: column;
+        padding: 20px;
+        height: auto;
+    }
+
+    .column1, .column2 {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+
+    .box .btn, .box .btn1 {
+        margin: 10px auto;
+        display: block;
+    }
+
+    .upload-box,
+    .upload-box-1 {
+        width: 90%;
+        height: auto;
+        margin: 20px auto;
+        border-radius: 20px;
+    }
+
+    .upload-box span,
+    .upload-box-1 span {
+        font-size: 80px;
+    }
+
+    .box h2,
+    .box p {
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .edit-btn {
+        top: 20px;
+        right: 20px;
+        padding: 10px 15px;
+        font-size: 24px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        background: white;
+        padding: 10px;
+    }
+
+    header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .language-switch {
+        margin: 10px 0;
+    }
+
+    #contact-button a {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+
+    .contact-form h2,
+    .contact-info h2 {
+        font-size: 26px;
+        text-align: center;
+    }
+
+    .contact-form .contact-subtitle,
+    .contact-info .contact-subtitle {
+        font-size: 16px;
+        text-align: center;
+    }
+
+    .contact-info ul li a {
+        font-size: 16px;
+    }
+
+    footer {
+        font-size: 16px;
+        padding: 20px;
+    }
+
+    footer p {
+        font-size: 18px;
+        text-align: center;
+    }
+
+    .menu-foot {
+        text-align: center;
+    }
+
+    .menu-foot li {
+        display: block;
+        margin: 10px 0;
+    }
+}
+
+
+.menu-toggle {
+    display: none;
+    font-size: 20px;
+    background: none;
+    border: 2px solid black;
+    padding: 10px 20px;
+    border-radius: 30px;
+    margin: 10px auto 10px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    nav {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 10px;
+    }
+
+    nav.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    nav ul.menu {
+        flex-direction: column;
+        gap: 10px;
+        padding: 0;
+    }
+
+    nav ul.menu li {
+        margin: 5px 0;
+    }
+}
